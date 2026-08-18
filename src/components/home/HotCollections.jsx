@@ -38,6 +38,36 @@ const HotCollections = ({ hotCollections, loading }) => {
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '26px',
+        }
+      }
+    ]
+
   };
 
 
@@ -69,8 +99,8 @@ const HotCollections = ({ hotCollections, loading }) => {
           <div className="nft_coll">
             <div className="nft_wrap">
               <Link
-                to="/item-details"
-                state={{ item: item }}
+                to={`/item-details/${item.id}`}
+                state={{ item }}
               >
                 <img
                   src={item.nftImage}
@@ -81,7 +111,9 @@ const HotCollections = ({ hotCollections, loading }) => {
             </div>
 
             <div className="nft_coll_pp">
-              <Link to="/author">
+              <Link
+                to={`/author/${item.authorId}`}
+              >
                 <img
                   className="lazy pp-coll"
                   src={item.authorImage}
@@ -94,8 +126,8 @@ const HotCollections = ({ hotCollections, loading }) => {
 
             <div className="nft_coll_info">
               <Link
-                to="/item-details"
-                state={{ item: item }}
+                to={`/item-details/${item.id}`}
+                state={{ item }}
               >
                 <h4>{item.title}</h4>
               </Link>

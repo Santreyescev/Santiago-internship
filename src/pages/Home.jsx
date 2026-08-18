@@ -17,6 +17,7 @@ const Home = () => {
     axios
       .get("https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections")
       .then((response) => {
+        console.log("HOT COLLECTIONS DATA:", response.data);
         setHotCollections(response.data);
       })
        .catch((error) => {
@@ -26,7 +27,7 @@ const Home = () => {
         setTimeout(() => {
           setLoading(false);
         }, 3000);
-      });
+      });   
   }, []);
 
   return (

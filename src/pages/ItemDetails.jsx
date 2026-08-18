@@ -3,12 +3,64 @@ import EthImage from "../images/ethereum.svg";
 import { Link } from "react-router-dom";
 import AuthorImage from "../images/author_thumbnail.jpg";
 import nftImage from "../images/nftImage.jpg";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 const ItemDetails = () => {
   const location = useLocation();
+  const { id } = useParams();
+  
   const item = location.state?.item;
 
+  const itemDetails = {
+  1: {
+    views: 120,
+    likes: 45,
+    price: 1.25,
+    description: "A colorful abstract NFT with a modern artistic style.",
+    authorName: "Alex Morgan",
+  },
+  2: {
+    views: 98,
+    likes: 61,
+    price: 1.5,
+    description: "A playful pattern NFT with a clean minimalist design.",
+    authorName: "Jordan Lee",
+  },
+  3: {
+    views: 150,
+    likes: 82,
+    price: 1.85,
+    description: "A vibrant artistic NFT full of color and movement.",
+    authorName: "Taylor Smith",
+  },
+  4: {
+    views: 210,
+    likes: 110,
+    price: 2.1,
+    description: "A creative digital artwork with a unique visual style.",
+    authorName: "Monica Lucas",
+  },
+  5: {
+    views: 175,
+    likes: 93,
+    price: 2.35,
+    description: "A distinctive NFT created with bold colors and shapes.",
+    authorName: "Chris Wilson",
+  },
+  6: {
+    views: 245,
+    likes: 128,
+    price: 2.75,
+    description: "A premium digital collectible with an original design.",
+    authorName: "Jamie Davis",
+  },
+};
+
+const details = itemDetails[item?.id];
+
+
+console.log("ITEM DETAILS:", item);
+  console.log("ITEM ID:", id);
   console.log("CLICKED ITEM:", item);
 
   useEffect(() => {
@@ -40,28 +92,28 @@ const ItemDetails = () => {
                   <div className="item_info_counts">
                     <div className="item_info_views">
                       <i className="fa fa-eye"></i>
-                      100
+                      {details?.views}
                     </div>
                     <div className="item_info_like">
                       <i className="fa fa-heart"></i>
-                      74
+                      {details?.authorName}
                     </div>
                   </div>
                   <p>
-                   {item?.description}
+                   {details?.description}
                   </p>
                   <div className="d-flex flex-row">
                     <div className="mr40">
                       <h6>Owner</h6>
                       <div className="item_author">
                         <div className="author_list_pp">
-                          <Link to="/author">
+                          <Link to={`/author/${item?.authorId}`}>
                             <img className="lazy" src={item?.authorImage} alt="" />
                             <i className="fa fa-check"></i>
                           </Link>
                         </div>
                         <div className="author_list_info">
-                          <Link to="/author">Monica Lucas</Link>
+                          <Link to={`/author/${item?.authorId}`}>{details?.authorName}</Link>
                         </div>
                       </div>
                     </div>
@@ -72,13 +124,13 @@ const ItemDetails = () => {
                       <h6>Creator</h6>
                       <div className="item_author">
                         <div className="author_list_pp">
-                          <Link to="/author">
+                          <Link to={`/author/${item?.authorId}`}>
                             <img className="lazy" src={item?.authorImage} alt="" />
                             <i className="fa fa-check"></i>
                           </Link>
                         </div>
                         <div className="author_list_info">
-                          <Link to="/author">Monica Lucas</Link>
+                          <Link to={`/author/${item?.authorId}`}>{details?.authorName}</Link>
                         </div>
                       </div>
                     </div>
@@ -86,7 +138,7 @@ const ItemDetails = () => {
                     <h6>Price</h6>
                     <div className="nft-item-price">
                       <img src={EthImage} alt="" />
-                      <span>1.85</span>
+                      <span>{details?.price}</span>
                     </div>
                   </div>
                 </div>
