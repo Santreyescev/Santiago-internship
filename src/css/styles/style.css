@@ -12713,7 +12713,7 @@ a.read_more i {
   background-color: #eeeeee;
   border-radius: 60px;
   position: relative;
-  cursor: poInter;
+  cursor: pointer;
 }
 
 .switch::after {

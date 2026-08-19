@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -29,6 +29,7 @@ const PrevArrow = ({ onClick }) => {
 };
 
 const HotCollections = ({ hotCollections, loading }) => {
+  const navigate = useNavigate();
   const settings = {
     dots: false,
     infinite: true,
@@ -95,53 +96,57 @@ const HotCollections = ({ hotCollections, loading }) => {
         </div>
       ))
     : hotCollections.map((item) => (
-        <div key={item.id}>
-          <div className="nft_coll">
-            <div className="nft_wrap">
-              <Link
-                to={`/item-details/${item.id}`}
-                state={{ item }}
-              >
-                <img
-                  src={item.nftImage}
-                  className="lazy img-fluid"
-                  alt={item.title}
-                />
-              </Link>
-            </div>
+  <div key={item.id}>
+    <div
+      className="nft_coll"
+      onClick={() =>
+        navigate(`/item-details/${item.id}`, {
+          state: { item },
+        })
+      }
+      style={{ cursor: "pointer" }}
+    >
+      <div className="nft_wrap">
+        <img
+          src={item.nftImage}
+          className="lazy img-fluid"
+          alt={item.title}
+        />
+      </div>
 
-            <div className="nft_coll_pp">
-              <Link
-                to={`/author/${item.authorId}`}
-              >
-                <img
-                  className="lazy pp-coll"
-                  src={item.authorImage}
-                  alt=""
-                />
-              </Link>
+      <div className="nft_coll_pp">
+  <Link
+    to={`/item-details/${item.id}`}
+    state={{ item }}
+  >
+    <img
+      className="lazy pp-coll"
+      src={item.authorImage}
+      alt=""
+    />
+  </Link>
+</div>
 
-              <i className="fa fa-check"></i>
-            </div>
+        <i className="fa fa-check"></i>
+      </div>
 
-            <div className="nft_coll_info">
-              <Link
-                to={`/item-details/${item.id}`}
-                state={{ item }}
-              >
-                <h4>{item.title}</h4>
-              </Link>
+      <div className="nft_coll_info">
+        <h4>{item.title}</h4>
+        <span>ERC-{item.code}</span>
+      </div>
+    </div>
 
-              <span>ERC-{item.code}</span>
-            </div>
-          </div>
-        </div>
-      ))}
+
+))}
+
 </Slider>
         </div>
       </div>
     </section>
   );
 };
+
+
+
 
 export default HotCollections;
