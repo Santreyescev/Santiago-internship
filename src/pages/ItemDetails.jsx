@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import EthImage from "../images/ethereum.svg";
 import AuthorImage from "../images/author_thumbnail.jpg";
 import nftImage from "../images/nftImage.jpg";
@@ -7,14 +8,30 @@ import { Link, useLocation, useParams } from "react-router-dom";
 const ItemDetails = () => {
   const location = useLocation();
   const { id } = useParams();
+  const [details, setDetails] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+  const getItemDetails = async () => {
+    try {
+      const response = await axios.get(
+        `https://us-central1-nft-cloud-functions.cloudfunctions.net/itemDetails?nftId=${id}`
+      );
+
+      console.log("DETAIL API:", response.data);
+      setDetails(response.data);
+    } catch (error) {
+      console.error("Error loading item details:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  getItemDetails();
+}, [id]);
+
+const item = location.state?.item;
   
-  const item = location.state?.item || {
-    id: Number(id),
-    title: "Pinky Ocean",
-    nftImage: nftImage,
-    authorImage: AuthorImage,
-    authorId: 1,
-  };
 
   const itemDetails = {
   1: {
@@ -61,13 +78,14 @@ const ItemDetails = () => {
   },
 };
 
-const details = itemDetails[Number(id)];
+const selectedDetails =
+  details || location.state?.item;
 
 useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-if (!details) {
+if (!selectedDetails) {
   return <h2>Item not found</h2>;
 }
 
@@ -75,74 +93,100 @@ if (!details) {
 console.log("ITEM DETAILS:", item);
   console.log("ITEM ID:", id);
   console.log("CLICKED ITEM:", item);
+  console.log("CREATOR IMAGE:", selectedDetails.creatorImage);
+  console. log("OWNER IMAGE:", selectedDetails.ownerImage);
+
 
   
 
   return (
-  <div id="wrapper">
+  <div id="wrapper">46
     <div className="no-bottom no-top" id="content">
       <div id="top"></div>
 
       <section aria-label="section" className="mt90 sm-mt-0">
         <div className="container">
-          <div className="row">
+          <div className="row align-items-start">
 
             <div className="col-md-6 text-center">
-              <img
-                src={item.nftImage}
-                className="img-fluid img-rounded mb-sm-30 nft-image"
-                alt={item.title}
-              />
+             <img
+  src={selectedDetails.nftImage}
+  className="img-fluid img-rounded mb-sm-30 nft-image"
+  alt={selectedDetails.title}
+/>
             </div>
 
             <div className="col-md-6">
               <div className="item_info">
-                <h2>{item.title}</h2>
+                <h2>
+  {selectedDetails.title} #{selectedDetails.tag}
+</h2>
 
                 <div className="item_info_counts">
                   <div className="item_info_views">
                     <i className="fa fa-eye"></i>
-                    {details.views}
+                    {selectedDetails.views}
                   </div>
 
                   <div className="item_info_like">
                     <i className="fa fa-heart"></i>
-                    {details.likes}
+                    {selectedDetails.likes}
                   </div>
                 </div>
 
-                <p>{details.description}</p>
+                <p>{selectedDetails.description}</p>
+
+               
 
                 <div className="spacer-40"></div>
 
                 <h6>Owner</h6>
 
-                <div className="item_author">
-                  <div className="author_list_pp">
-                    <Link to={`/author/${item.authorId}`}>
-                      <img
-                        className="lazy"
-                        src={item.authorImage}
-                        alt=""
-                      />
-                      <i className="fa fa-check"></i>
-                    </Link>
-                  </div>
+<div className="item_author">
+  <div className="author_list_pp">
+    <Link to={`/author/${selectedDetails.ownerId}`}>
+      <img
+        className="lazy"
+        src={selectedDetails.ownerImage}
+        alt={selectedDetails.ownerName}
+      />
+      <i className="fa fa-check"></i>
+    </Link>
+  </div>
 
-                  <div className="author_list_info">
-                    <Link to={`/author/${item.authorId}`}>
-                      {details.authorName}
-                    </Link>
-                  </div>
-                </div>
+  <div className="author_list_info">
+    <Link to={`/author/${selectedDetails.ownerId}`}>
+      {selectedDetails.ownerName}
+    </Link>
+  </div>
+</div>
 
-                <div className="spacer-40"></div>
+                 <h6>Creator</h6>
+
+<div className="item_author">
+  <div className="author_list_pp">
+    <Link to={`/author/${selectedDetails.creatorId}`}>
+      <img
+        className="lazy"
+        src={selectedDetails.creatorImage}
+        alt={selectedDetails.creatorName}
+      />
+      <i className="fa fa-check"></i>
+    </Link>
+  </div>
+
+  <div className="author_list_info">
+    <Link to={`/author/${selectedDetails.creatorId}`}>
+      {selectedDetails.creatorName}
+    </Link>
+  </div>
+</div>
 
                 <h6>Price</h6>
 
                 <div className="nft-item-price">
                   <img src={EthImage} alt="" />
-                  <span>{details.price} ETH</span>
+                  <span>{selectedDetails.price} ETH</span>
                 </div>
 
               </div>

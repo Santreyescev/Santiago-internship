@@ -85,59 +85,60 @@ const HotCollections = ({ hotCollections, loading }) => {
           </div>
           <Slider {...settings}>
   {loading
-    ? new Array(4).fill(0).map((_, index) => (
-        <div key={index}>
-          <div className="nft_coll skeleton-card">
-            <div className="skeleton-image"></div>
-            <div className="skeleton-author"></div>
-            <div className="skeleton-title"></div>
-            <div className="skeleton-code"></div>
-          </div>
-        </div>
-      ))
-    : hotCollections.map((item) => (
-  <div key={item.id}>
-    <div
-      className="nft_coll"
-      onClick={() =>
-        navigate(`/item-details/${item.id}`, {
-          state: { item },
-        })
-      }
-      style={{ cursor: "pointer" }}
-    >
-      <div className="nft_wrap">
-        <img
-          src={item.nftImage}
-          className="lazy img-fluid"
-          alt={item.title}
-        />
-      </div>
-
-      <div className="nft_coll_pp">
-  <Link
-    to={`/item-details/${item.id}`}
-    state={{ item }}
+    ? new Array(4).fill(0).map((_, index) => (
+        <div key={index}>
+          <div className="nft_coll skeleton-card">
+            <div className="skeleton-image"></div>
+            <div className="skeleton-author"></div>
+            <div className="skeleton-title"></div>
+            <div className="skeleton-code"></div>
+          </div>
+        </div>
+      ))
+    : hotCollections.map((item, index) => (
+  <div
+    key={item.id}
+    className="nft_coll"
+    onClick={() =>
+      navigate(`/item-details/${item.nftId}`, {
+        state: {
+item,
+dettailId: index + 1,
+        },
+      })
+    }
+    style={{ cursor: "pointer" }}
   >
-    <img
-      className="lazy pp-coll"
-      src={item.authorImage}
-      alt=""
-    />
-  </Link>
-</div>
+            <div className="nft_wrap">
+              <img
+                src={item.nftImage}
+                className="lazy img-fluid"
+                alt={item.title}
+              />
+            </div>
 
-        <i className="fa fa-check"></i>
-      </div>
+            <div className="nft_coll_pp">
+              <Link
+                to={`/item-details/${item.nftId}`}
+                state={{ item }}
 
-      <div className="nft_coll_info">
-        <h4>{item.title}</h4>
-        <span>ERC-{item.code}</span>
-      </div>
-    </div>
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img
+                  className="lazy pp-coll"
+                  src={item.authorImage || item.ownerImage}
+                  alt="item. title"
+                />
+              </Link>
 
-
-))}
+            <i className="fa fa-check"></i>
+          </div>
+          <div className="nft_coll_info">
+            <h4>{item.title}</h4>
+            <span>ERC-{item.code}</span>
+          </div>
+        </div>
+      ))}
 
 </Slider>
         </div>

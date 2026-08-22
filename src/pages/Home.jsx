@@ -26,7 +26,7 @@ const Home = () => {
       .finally(() => {
         setTimeout(() => {
           setLoading(false);
-        }, 3000);
+        }, 2000);
       });   
   }, []);
 
