@@ -16816,6 +16816,259 @@ img {
   overflow: hidden;
 }
 
+#section-main {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 
+#section-main .row {
+  align-items: flex-start;
+}
 
+.nft-image {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  object-fit: cover;
+}
+
+.item_info {
+  padding-left: 20px;
+  max-width: 520px;
+}
+
+.item_info h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 42px;
+}
+
+.item_info_counts {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.item_info p {
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.item_author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.author_list_pp img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.spacer-40 {
+  height: 20px;
+}
+
+.nft-item-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.nft-item-price img {
+  width: 24px;
+}
+
+/* ===== ITEM DETAILS LAYOUT OVERRIDE ===== */
+
+/* More space below navbar */
+#content section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+/* Keep the detail page centered */
+#content section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left image */
+#content .nft-image {
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Right side information */
+#content .item_info {
+  padding-left: 35px;
+  padding-top: 5px;
+}
+
+/* Title */
+#content .item_info h2 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Views + likes */
+#content .item_info_counts {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+#content .item_info_views,
+#content .item_info_like {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 18px;
+}
+
+/* Description */
+#content .item_info > p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+/* Owner area */
+#content .item_author {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+#content .author_list_pp {
+  margin-left: 0 !important;
+}
+
+#content .author_list_info {
+  padding-top: 0 !important;
+  padding-left: 70px !important;
+}
+
+/* Price */
+#content .nft-item-price {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#content .nft-item-price img {
+  width: 24px;
+  height: 24px;
+}
+
+#content .nft-item-price span {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* Reduce the large spacer areas on this page */
+#content .item_info .spacer-40 {
+  height: 15px !important;
+}
+
+/* Phone/tablet */
+@media (max-width: 767px) {
+  #content section {
+    padding-top: 40px;
+  }
+
+  #content .nft-image {
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  #content .item_info {
+    padding-left: 0;
+  }
+
+  #content .item_info h2 {
+    font-size: 32px;
+  }
+}
+
+.nft_coll_pp {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: -25px auto 10px;
+  z-index: 10;
+}
+
+.nft_coll_pp a {
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.nft_coll_pp img,
+.nft_coll_pp .pp-coll {
+  display: block !important;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.nft_coll_pp .fa-check {
+  position: absolute;
+  right: -3px;
+  bottom: 0;
+  z-index: 20;
+}
+
+#section-items .container {
+  position: relative;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: white;
+  z-index: 10;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-arrow-left {
+  left: -25px;
+}
+
+.slider-arrow-right {
+  right: -25px;
+}
+
+.slider-arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
 
