@@ -17071,7 +17071,7 @@ img {
   opacity: 0.4;
   cursor: default;
 }
-/* ===== AUTHOR PAGE - FINAL FIX ===== */
+/* AUTHOR PAGE */
 
 .de_tab_content .author-items-row {
   display: grid !important;
@@ -17080,161 +17080,162 @@ img {
   width: 100% !important;
 }
 
-.de_tab_content .author-items-row > div {
+.de_tab_content .author-items-row > .author-card {
   width: 100% !important;
-  max-width: 100% !important;
   min-width: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  flex: none !important;
 }
 
 .de_tab_content .author-items-row .nft__item {
   width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
   height: auto !important;
-  min-height: 350px !important;
+  min-height: 0 !important;
   padding: 15px !important;
   box-sizing: border-box !important;
+  position: relative !important;
 }
 
+/* IMPORTANT: image container */
 .de_tab_content .author-items-row .nft__item_wrap {
   width: 100% !important;
-  height: 220px !important;
+  height: 190px !important;
   overflow: hidden !important;
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-.de_tab_content .author-items-row .nft__item_wrap > a {
-  width: 100% !important;
-  height: 100% !important;
-  display: block !important;
-}
-
+/* IMPORTANT: NFT image */
 .de_tab_content .author-items-row img.nft__item_preview {
   width: 100% !important;
-  height: 100% !important;
+  height: 190px !important;
   max-width: 100% !important;
-  object-fit: cover !important;
+  max-height: 190px !important;
+  object-fit: contain !important;
   display: block !important;
 }
 
+/* author icon */
+.de_tab_content .author-items-row .author_list_pp {
+  position: absolute !important;
+  top: 10px !important;
+  left: 10px !important;
+  z-index: 10 !important;
+}
+
+.de_tab_content .author-items-row .profile_avatar,
 .de_tab_content .author-items-row .profile_avatar img {
   width: 45px !important;
   height: 45px !important;
   min-width: 45px !important;
   max-width: 45px !important;
+}
+
+.de_tab_content .author-items-row .profile_avatar img {
   border-radius: 50% !important;
   object-fit: cover !important;
 }
 
-/* Card */
-.de_tab_content .author-items-row .nft__item {
-  position: relative !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 350px !important;
-  padding: 15px !important;
-  box-sizing: border-box !important;
+/* title / price */
+.de_tab_content .author-items-row .nft__item_info {
+  margin-top: 12px !important;
 }
 
-/* NFT image container */
-.de_tab_content .author-items-row .nft__item_wrap {
-  width: 100% !important;
-  height: 220px !important;
-  overflow: hidden !important;
-  display: block !important;
+/* responsive */
+@media (max-width: 900px) {
+  .de_tab_content .author-items-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
 }
 
-/* Link around NFT image */
-.de_tab_content .author-items-row .nft__item_wrap > a {
-  width: 100% !important;
-  height: 100% !important;
-  display: block !important;
+@media (max-width: 600px) {
+  .de_tab_content .author-items-row {
+    grid-template-columns: 1fr !important;
+  }
 }
 
-/* NFT image */
-.de_tab_content .author-items-row img.nft__item_preview {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
-  object-fit: cover !important;
-  display: block !important;
-}
-
-/* Put small author image on top-left of card */
-.de_tab_content .author-items-row .author_list_pp {
-  position: absolute !important;
-  top: 10px !important;
-  left: 15px !important;
-  width: 45px !important;
-  height: 45px !important;
-  margin: 0 !important;
-  z-index: 10 !important;
-}
-
-/* Small round author image */
-.de_tab_content .author-items-row .author_list_pp img {
-  width: 45px !important;
-  height: 45px !important;
-  min-width: 45px !important;
-  max-width: 45px !important;
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  display: block !important;
-}
-
-/* Purple check attached to author circle */
-.de_tab_content .author-items-row .author_list_pp .fa-check {
-  position: absolute !important;
-  right: -4px !important;
-  bottom: 0 !important;
-  width: 18px !important;
-  height: 18px !important;
-  margin: 0 !important;
-  z-index: 11 !important;
-}
+/* ===== EMERGENCY AUTHOR CARD IMAGE FIX ===== */
 
 .de_tab_content .author-items-row .author-card {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  overflow: hidden !important;
 }
 
-/* REMOVE BOOTSTRAP INVISIBLE GRID ITEMS */
-.de_tab_content .row.author-items-row::before,
-.de_tab_content .row.author-items-row::after {
-  display: none !important;
-  content: none !important;
-}
-
-.de_tab_content .row.author-items-row::before,
-.de_tab_content .row.author-items-row::after {
-  display: none !important;
-  content: none !important;
-}
-
-.de_tab_content .row.author-items-row {
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  gap: 20px !important;
+.de_tab_content .author-items-row .author-card .nft__item {
+  position: relative !important;
   width: 100% !important;
+  height: 340px !important;
+  min-height: 0 !important;
+  max-height: 340px !important;
+  padding: 15px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
 }
 
-.de_tab_content .row.author-items-row > div {
+.de_tab_content .author-items-row .author-card .nft__item_wrap {
+  position: relative !important;
   width: 100% !important;
+  height: 190px !important;
+  max-height: 190px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.de_tab_content .author-items-row .author-card .nft__item_wrap > a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 190px !important;
+  overflow: hidden !important;
+}
+
+.de_tab_content .author-items-row .author-card .nft__item_wrap img,
+.de_tab_content .author-items-row .author-card img.nft__item_preview {
+  position: static !important;
+
+  width: auto !important;
+  height: auto !important;
+
   max-width: 100% !important;
+  max-height: 190px !important;
+
   min-width: 0 !important;
-  flex: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  min-height: 0 !important;
+
+  object-fit: contain !important;
+
+  transform: none !important;
+  margin: 0 auto !important;
+  display: block !important;
 }
 
-/* AUTHOR PAGE - 4 CARDS PER ROW */
+/* Author avatar ONLY */
+.de_tab_content .author-items-row .author-card .author_list_pp {
+  position: absolute !important;
+  top: 10px !important;
+  left: 10px !important;
+  width: 45px !important;
+  height: 45px !important;
+  z-index: 20 !important;
+}
 
+.de_tab_content .author-items-row .author-card .profile_avatar,
+.de_tab_content .author-items-row .author-card .profile_avatar img {
+  width: 45px !important;
+  height: 45px !important;
+  max-width: 45px !important;
+  max-height: 45px !important;
+  min-width: 45px !important;
+  min-height: 45px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+/* 4 cards */
 .de_tab_content .author-items-row {
   display: grid !important;
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
@@ -17242,36 +17243,43 @@ img {
   width: 100% !important;
 }
 
-.de_tab_content .author-items-row > .author-card {
-  width: 100% !important;
-  max-width: none !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  flex: none !important;
+/* Tablet */
+@media (max-width: 900px) {
+  .de_tab_content .author-items-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
 }
 
-/* AUTHOR PAGE WIDTH FIX */
-.de_tab_content {
-  width: 100% !important;
-  max-width: none !important;
+/* Phone */
+@media (max-width: 600px) {
+  .de_tab_content .author-items-row {
+    grid-template-columns: 1fr !important;
+  }
 }
 
-.de_tab_content .tab-1 {
+/* ===== AUTHOR IMAGE FIX ===== */
+
+.de_tab_content .author-items-row .nft__item_wrap {
   width: 100% !important;
-  max-width: none !important;
+  height: 220px !important;
+  display: block !important;
+  overflow: hidden !important;
+  position: relative !important;
 }
 
-.de_tab_content .author-items-row {
+.de_tab_content .author-items-row .nft__item_wrap a {
   width: 100% !important;
-  max-width: none !important;
-  display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  gap: 20px !important;
+  height: 100% !important;
+  display: block !important;
 }
 
-.de_tab_content .author-items-row > .author-card {
+.de_tab_content .author-items-row img.nft__item_preview {
   width: 100% !important;
-  max-width: none !important;
-  min-width: 0 !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 220px !important;
+  object-fit: cover !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }

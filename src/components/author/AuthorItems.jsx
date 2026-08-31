@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 const AuthorItems = ({ author }) => {
   const items = author?.nftCollection || [];
 
+  console.log("AUTHOR:", author?.authorName);
+console.log("NUMBER OF ITEMS:", items.length);
+console.log("ITEMS:", items);
+
   console.log("AUTHOR RECEIVED:", author);
   console.log("NFT COLLECTION:", items);
 
@@ -12,11 +16,11 @@ const AuthorItems = ({ author }) => {
   <div className="de_tab_content">
   <div className="tab-1">
     <div className="author-items-row">
-      {items.map((item) => (
-        <div
-          className="author-card"
-          key={item.nftId || item.id}
-        >
+  {items.map((item) => (
+    <div
+      className="author-card"
+      key={item.nftId || item.id}
+    >
           <div className="nft__item">
 
             <div className="author_list_pp">
@@ -50,10 +54,13 @@ const AuthorItems = ({ author }) => {
                 }}
               >
                 <img
-                  src={item.nftImage}
-                  className="lazy nft__item_preview"
-                  alt={item.title}
-                />
+  src={item.nftImage}
+  className="lazy nft__item_preview"
+  alt={item.title}
+  onError={(e) => {
+    console.log("IMAGE FAILED:", item.nftImage);
+  }}
+/>
               </Link>
             </div>
 
