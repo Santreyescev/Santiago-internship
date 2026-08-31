@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const NewItems = () => {
   const [items, setItems] = useState([]);
+  console.log("MY ITEMS:", items);
   const [time, setTime] = useState(Date.now());
   const [startIndex, setStartIndex] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -58,16 +59,11 @@ const NewItems = () => {
         console.log("FIRST ITEM:", data[0]);
 
       setItems(data);
+      setLoading(false);
 
-      setItems(data);
-
-setTimeout(() => {
-  setLoading(false);
-}, 1500);
-
-    }
-    catch (error) {
+    } catch (error) {
       console.error("Error fetching new items:", error);
+      setLoading(false);
     }
   }
 
@@ -111,7 +107,7 @@ setTimeout(() => {
     ))
   : items.slice(startIndex, startIndex + 4).map((item) => (
             <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={item.id}>
-              <div className="nft__item">
+              <div className="nft__item author-nft-card">
                 <div className="author_list_pp">
                   <Link
                     to="/author"

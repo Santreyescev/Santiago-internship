@@ -17071,4 +17071,207 @@ img {
   opacity: 0.4;
   cursor: default;
 }
+/* ===== AUTHOR PAGE - FINAL FIX ===== */
 
+.de_tab_content .author-items-row {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+.de_tab_content .author-items-row > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  flex: none !important;
+}
+
+.de_tab_content .author-items-row .nft__item {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 350px !important;
+  padding: 15px !important;
+  box-sizing: border-box !important;
+}
+
+.de_tab_content .author-items-row .nft__item_wrap {
+  width: 100% !important;
+  height: 220px !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+
+.de_tab_content .author-items-row .nft__item_wrap > a {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+.de_tab_content .author-items-row img.nft__item_preview {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.de_tab_content .author-items-row .profile_avatar img {
+  width: 45px !important;
+  height: 45px !important;
+  min-width: 45px !important;
+  max-width: 45px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+/* Card */
+.de_tab_content .author-items-row .nft__item {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 350px !important;
+  padding: 15px !important;
+  box-sizing: border-box !important;
+}
+
+/* NFT image container */
+.de_tab_content .author-items-row .nft__item_wrap {
+  width: 100% !important;
+  height: 220px !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+
+/* Link around NFT image */
+.de_tab_content .author-items-row .nft__item_wrap > a {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+/* NFT image */
+.de_tab_content .author-items-row img.nft__item_preview {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Put small author image on top-left of card */
+.de_tab_content .author-items-row .author_list_pp {
+  position: absolute !important;
+  top: 10px !important;
+  left: 15px !important;
+  width: 45px !important;
+  height: 45px !important;
+  margin: 0 !important;
+  z-index: 10 !important;
+}
+
+/* Small round author image */
+.de_tab_content .author-items-row .author_list_pp img {
+  width: 45px !important;
+  height: 45px !important;
+  min-width: 45px !important;
+  max-width: 45px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  display: block !important;
+}
+
+/* Purple check attached to author circle */
+.de_tab_content .author-items-row .author_list_pp .fa-check {
+  position: absolute !important;
+  right: -4px !important;
+  bottom: 0 !important;
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0 !important;
+  z-index: 11 !important;
+}
+
+.de_tab_content .author-items-row .author-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* REMOVE BOOTSTRAP INVISIBLE GRID ITEMS */
+.de_tab_content .row.author-items-row::before,
+.de_tab_content .row.author-items-row::after {
+  display: none !important;
+  content: none !important;
+}
+
+.de_tab_content .row.author-items-row::before,
+.de_tab_content .row.author-items-row::after {
+  display: none !important;
+  content: none !important;
+}
+
+.de_tab_content .row.author-items-row {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+.de_tab_content .row.author-items-row > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  flex: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* AUTHOR PAGE - 4 CARDS PER ROW */
+
+.de_tab_content .author-items-row {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+.de_tab_content .author-items-row > .author-card {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex: none !important;
+}
+
+/* AUTHOR PAGE WIDTH FIX */
+.de_tab_content {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.de_tab_content .tab-1 {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.de_tab_content .author-items-row {
+  width: 100% !important;
+  max-width: none !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+}
+
+.de_tab_content .author-items-row > .author-card {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}

@@ -1,37 +1,130 @@
-import React from "react";
+import React, { useEffect, useState} from "react";
 import { Link } from "react-router-dom";
-import AuthorImage from "../../images/author_thumbnail.jpg";
-import nftImage from "../../images/nftImage.jpg";
 
 const ExploreItems = () => {
+const [sortOption, setSortOption] = useState("");
+
+
+  const [items, setItems] = useState([]);
+
+useEffect(() => {
+  async function fetchItems() {
+    try {
+      const response = await fetch(
+        "https://us-central1-nft-cloud-functions.cloudfunctions.net/explore"
+      );
+
+      const data = await response.json();
+
+      console.log("EXPLORE API:", data);
+
+      setItems(data);
+    } catch (error) {
+      console.error("Explore API error:", error);
+    }
+  }
+
+  fetchItems();
+}, []);
+
+
+const [visibleItems, setVisibleItems] = useState(8);
+const [now, setNow] = useState(Date.now());
+
+useEffect(() => {
+  const timer = setInterval(() => {
+    setNow(Date.now());
+  }, 1000);
+
+
+  return () => clearInterval(timer);
+}, []);
+
+const formatCountdown = (expiration) => {
+  if (!expiration) return "";
+
+  const endTime = new Date(expiration).getTime();
+  const difference = endTime - now;
+
+  if (difference <= 0) {
+    return "Expired";
+  }
+
+  const hours = Math.floor(difference / (1000 * 60 * 60));
+  const minutes = Math.floor(
+    (difference % (1000 * 60 * 60)) / (1000 * 60)
+  );
+  const seconds = Math.floor(
+    (difference % (1000 * 60)) / 1000
+  );
+
+  return `${hours}h ${minutes}m ${seconds}s`;
+};
+
+console.log("EXPLORE ITEMS:", items);
+
+const sortedItems = [...items].sort((a, b) => {
+  if (sortOption === "price_low_to_high") {
+    return Number(a.price) - Number(b.price);
+  }
+
+  if (sortOption === "price_high_to_low") {
+    return Number(b.price) - Number(a.price);
+  }
+
+  if (sortOption === "likes_high_to_low") {
+    return Number(b.likes) - Number(a.likes);
+  }
+
+  return 0;
+});
+
   return (
     <>
       <div>
-        <select id="filter-items" defaultValue="">
+        <select
+  id="filter-items"
+  value={sortOption}
+  onChange={(e) => setSortOption(e.target.value)}
+>
           <option value="">Default</option>
           <option value="price_low_to_high">Price, Low to High</option>
           <option value="price_high_to_low">Price, High to Low</option>
           <option value="likes_high_to_low">Most liked</option>
         </select>
       </div>
-      {new Array(8).fill(0).map((_, index) => (
+      {sortedItems.slice(0, visibleItems).map((item) => (
+
+        
+
         <div
-          key={index}
+          key={item.nftId}
           className="d-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
           style={{ display: "block", backgroundSize: "cover" }}
         >
           <div className="nft__item">
             <div className="author_list_pp">
               <Link
-                to="/author"
+                to={`/author/${item.authorId}`}
                 data-bs-toggle="tooltip"
                 data-bs-placement="top"
               >
-                <img className="lazy" src={AuthorImage} alt="" />
+  <img
+  className="lazy"
+  src={item.authorImage}
+  alt={item.authorName}
+  onError={(e) => {
+    e.target.onerror = null;e.target.src = "https://ui-avatars.com/api/?name=" + encodeURIComponent(item.authorName || "NFT") + "&background=8358ff&color=fff";
+  }}
+/>
                 <i className="fa fa-check"></i>
               </Link>
             </div>
-            <div className="de_countdown">5h 30m 32s</div>
+            {item.expiryDate && (
+  <div className="de_countdown">
+    {formatCountdown(item.expiryDate)}
+  </div>
+)}
 
             <div className="nft__item_wrap">
               <div className="nft__item_extra">
@@ -51,28 +144,47 @@ const ExploreItems = () => {
                   </div>
                 </div>
               </div>
-              <Link to="/item-details">
-                <img src={nftImage} className="lazy nft__item_preview" alt="" />
+              <Link to={`/item-details/${item.nftId}`}>
+             <img
+  src={item.nftImage}
+  className="lazy nft__item_preview"
+  alt={item.title}
+  onError={(e) => {
+    e.target.onerror = null;
+    e.target.src = "https://placehold.co/400x300?text=Image+Unavailable";
+  }}
+/>
               </Link>
             </div>
             <div className="nft__item_info">
-              <Link to="/item-details">
-                <h4>Pinky Ocean</h4>
-              </Link>
-              <div className="nft__item_price">1.74 ETH</div>
+              <Link to={`/item-details/${item.nftId}`}>
+  <h4>{item.title}</h4>
+</Link>
+<div className="nft__item_action">
+              <div className="nft__item_price">
+  {item.price} ETH
+</div>
               <div className="nft__item_like">
                 <i className="fa fa-heart"></i>
-                <span>69</span>
+                <span>{item.likes}</span>
+              </div>
               </div>
             </div>
           </div>
         </div>
       ))}
-      <div className="col-md-12 text-center">
-        <Link to="" id="loadmore" className="btn-main lead">
-          Load more
-        </Link>
-      </div>
+      {visibleItems < sortedItems.length && (
+  <div className="col-md-12 text-center">
+    <button
+      id="loadmore"
+      className="btn-main lead"
+      onClick={() => setVisibleItems((prev) => prev + 4)}
+    >
+      Load more
+    </button>
+  </div>
+)}
+     
     </>
   );
 };
