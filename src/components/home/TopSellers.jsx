@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const TopSellers = () => {
   const [sellers, setSellers] = useState([]);
-  const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     const fetchTopSellers = async () => {
@@ -13,8 +13,6 @@ const TopSellers = () => {
         setSellers(data);
       } catch (error) {
         console.error("Error fetching top sellers:", error);
-      } finally {
-        setLoading(false);
       }
     };
 
