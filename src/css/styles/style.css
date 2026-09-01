@@ -10188,11 +10188,12 @@ i.bg-color-secondary {
 }
 
 .v-center {
-  min-height: 100%;
-  min-height: 100vh;
   display: flex;
   align-items: center;
+  min-height: 100vh;
+  padding-top: 60px;
 }
+
 
 .f-logo {
   margin-right: 30px;
@@ -14680,7 +14681,7 @@ header:not(.header-light) #quick_search::-webkit-input-placeholder {
 
 .items_filter {
   font-size: 14px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .items_filter .dropdown {
@@ -17072,3 +17073,1524 @@ img {
   cursor: default;
 }
 
+/* ===== EXPLORE PAGE CARD FIX ===== */
+
+.row > .d-item {
+  width: 25% !important;
+  flex: 0 0 25% !important;
+  max-width: 25% !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  display: block !important;
+}
+
+.row > .d-item .nft__item {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 15px !important;
+  box-sizing: border-box !important;
+}
+
+.row > .d-item .nft__item_wrap {
+  width: 100% !important;
+  height: 220px !important;
+  min-height: 0 !important;
+  max-height: 220px !important;
+  overflow: hidden !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.row > .d-item .nft__item_wrap > a {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.row > .d-item img.nft__item_preview {
+  width: auto !important;
+  height: auto !important;
+
+  max-width: 100% !important;
+  max-height: 220px !important;
+
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.row > .d-item .nft__item_info {
+  margin-top: 12px !important;
+}
+
+/* tablet */
+@media (max-width: 900px) {
+  .row > .d-item {
+    width: 50% !important;
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/* phone */
+@media (max-width: 600px) {
+  .row > .d-item {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+/* ===== EXPLORE CARDS - MATCH ORIGINAL ===== */
+
+.row > .d-item.col-lg-3 {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  margin-bottom: 20px !important;
+}
+
+.row > .d-item.col-lg-3 .nft__item {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 15px !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+/* NFT IMAGE AREA */
+.row > .d-item.col-lg-3 .nft__item_wrap {
+  width: 100% !important;
+  height: 220px !important;
+  max-height: 220px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* LINK AROUND IMAGE */
+.row > .d-item.col-lg-3 .nft__item_wrap > a {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* MAIN NFT IMAGE */
+.row > .d-item.col-lg-3 img.nft__item_preview {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 220px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* TITLE + PRICE */
+.row > .d-item.col-lg-3 .nft__item_info {
+  margin-top: 12px !important;
+}
+
+/* AUTHOR AVATAR */
+.row > .d-item.col-lg-3 .author_list_pp {
+  position: absolute !important;
+  top: 10px !important;
+  left: 10px !important;
+  z-index: 20 !important;
+}
+
+.row > .d-item.col-lg-3 .profile_avatar,
+.row > .d-item.col-lg-3 .profile_avatar img {
+  width: 45px !important;
+  height: 45px !important;
+  min-width: 45px !important;
+  max-width: 45px !important;
+  min-height: 45px !important;
+  max-height: 45px !important;
+}
+
+.row > .d-item.col-lg-3 .profile_avatar img {
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+/* COUNTDOWN */
+.row > .d-item.col-lg-3 .de_countdown {
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
+  z-index: 20 !important;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .row > .d-item.col-lg-3 .nft__item_wrap {
+    height: 220px !important;
+  }
+}
+
+/* PHONE */
+@media (max-width: 600px) {
+  .row > .d-item.col-lg-3 .nft__item_wrap {
+    height: 260px !important;
+  }
+}
+
+/* ===== FIX EXPLORE CARD HEIGHT ===== */
+
+.row .d-item .nft__item {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 15px !important;
+}
+
+.row .d-item .nft__item_wrap {
+    height: 210px !important;
+    min-height: 0 !important;
+    margin: 0 0 15px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.row .d-item .nft__item_preview {
+    width: 100% !important;
+    height: 210px !important;
+    max-height: 210px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.row .d-item .nft__item_info {
+    padding: 5px 0 0 !important;
+    margin: 0 !important;
+}
+
+.row .d-item .nft__item_info h4 {
+    margin: 0 0 5px !important;
+}
+
+.row .d-item .nft__item_action {
+    margin-top: 5px !important;
+}
+
+/* ===== FINAL EXPLORE CARD HEIGHT FIX ===== */
+
+.row > .d-item {
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+.row > .d-item > .nft__item {
+    height: 330px !important;
+    min-height: 330px !important;
+    max-height: 330px !important;
+    padding: 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.row > .d-item > .nft__item .nft__item_wrap {
+    height: 190px !important;
+    min-height: 190px !important;
+    max-height: 190px !important;
+    margin-bottom: 10px !important;
+}
+
+.row > .d-item > .nft__item .nft__item_preview {
+    width: 100% !important;
+    height: 190px !important;
+    max-height: 190px !important;
+    object-fit: cover !important;
+}
+
+.row > .d-item > .nft__item .nft__item_info {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.row > .d-item > .nft__item .nft__item_info h4 {
+    margin: 0 0 8px 0 !important;
+}
+
+.row > .d-item > .nft__item .nft__item_action {
+    margin-top: 0 !important;
+}
+
+/* ============================= */
+/* EXPLORE CARDS - FINAL LAYOUT  */
+/* ============================= */
+
+.row > .d-item {
+  margin-bottom: 20px !important;
+}
+
+/* whole card */
+.row > .d-item .nft__item {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  padding: 15px !important;
+  border-radius: 10px !important;
+
+  display: block !important;
+  overflow: visible !important;
+}
+
+/* NFT image area */
+.row > .d-item .nft__item_wrap {
+  width: 100% !important;
+  height: 235px !important;
+  min-height: 0 !important;
+  max-height: 235px !important;
+
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin-bottom: 12px !important;
+}
+
+/* clickable image link */
+.row > .d-item .nft__item_wrap > a {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* actual NFT picture */
+.row > .d-item img.nft__item_preview {
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: 100% !important;
+  max-height: 235px !important;
+
+  object-fit: cover !important;
+  display: block !important;
+
+  margin: 0 !important;
+  transform: none !important;
+}
+
+/* title + bottom information */
+.row > .d-item .nft__item_info {
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+
+  margin-top: 0 !important;
+  padding: 0 !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+}
+
+/* title */
+.row > .d-item .nft__item_info h4 {
+  margin: 0 0 6px 0 !important;
+}
+
+/* price + likes row */
+.row > .d-item .nft__item_action {
+  width: 100% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  margin-top: 4px !important;
+}
+
+/* price */
+.row > .d-item .nft__item_price {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* likes */
+.row > .d-item .nft__item_like {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* author avatar */
+.row > .d-item .author_list_pp {
+  position: absolute !important;
+  top: 10px !important;
+  left: 10px !important;
+  z-index: 10 !important;
+}
+
+/* countdown */
+.row > .d-item .de_countdown {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  z-index: 10 !important;
+}
+
+/* 4 cards per row desktop */
+@media (min-width: 992px) {
+  .row > .d-item {
+    flex: 0 0 25% !important;
+    max-width: 25% !important;
+  }
+}
+
+/* =========================================
+   EXPLORE CARDS - FINAL MATCH
+   ========================================= */
+
+.row > .d-item {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  margin-bottom: 16px !important;
+}
+
+.row > .d-item .nft__item {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+
+  padding: 14px !important;
+  margin: 0 !important;
+
+  border: 1px solid #ddd !important;
+  border-radius: 12px !important;
+
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* IMAGE AREA */
+.row > .d-item .nft__item_wrap {
+  position: relative !important;
+
+  width: 100% !important;
+  height: 245px !important;
+
+  margin: 0 0 12px 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+  border-radius: 8px !important;
+}
+
+.row > .d-item .nft__item_wrap > a {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.row > .d-item img.nft__item_preview {
+  display: block !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: none !important;
+  max-height: none !important;
+
+  object-fit: cover !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transform: none !important;
+}
+
+/* AUTHOR AVATAR */
+.row > .d-item .author_list_pp {
+  position: absolute !important;
+
+  top: 10px !important;
+  left: 10px !important;
+
+  width: 42px !important;
+  height: 42px !important;
+
+  z-index: 10 !important;
+}
+
+.row > .d-item .author_list_pp img {
+  width: 42px !important;
+  height: 42px !important;
+
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+/* COUNTDOWN */
+.row > .d-item .de_countdown {
+  position: absolute !important;
+
+  top: 10px !important;
+  right: 10px !important;
+
+  width: auto !important;
+  min-width: 125px !important;
+
+  padding: 4px 12px !important;
+  margin: 0 !important;
+
+  text-align: center !important;
+  white-space: nowrap !important;
+
+  border-radius: 20px !important;
+  z-index: 10 !important;
+}
+
+/* CARD INFO */
+.row > .d-item .nft__item_info {
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* TITLE */
+.row > .d-item .nft__item_info h4 {
+  margin: 0 0 8px 0 !important;
+  padding: 0 !important;
+
+  font-size: 16px !important;
+  line-height: 22px !important;
+}
+
+/* PRICE + LIKES ROW */
+.row > .d-item .nft__item_action {
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  width: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* PRICE */
+.row > .d-item .nft__item_price {
+  position: static !important;
+
+  width: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap !important;
+}
+
+/* LIKES */
+.row > .d-item .nft__item_like {
+  position: static !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  width: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  white-space: nowrap !important;
+}
+
+.row > .d-item .nft__item_like i {
+  margin-right: 5px !important;
+}
+
+/* DESKTOP = 4 CARDS */
+@media (min-width: 901px) {
+  .row > .d-item.col-lg-3 {
+    width: 25% !important;
+    flex: 0 0 25% !important;
+    max-width: 25% !important;
+  }
+}
+
+/* TABLET = 2 CARDS */
+@media (max-width: 900px) {
+  .row > .d-item {
+    width: 50% !important;
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/* PHONE = 1 CARD */
+@media (max-width: 600px) {
+  .row > .d-item {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ===== FIX PRICE + LIKES INSIDE EXPLORE CARD ===== */
+
+.row .nft__item {
+  position: relative !important;
+}
+
+.row .nft__item_info {
+  width: 100% !important;
+  padding: 12px 15px 15px !important;
+  box-sizing: border-box !important;
+}
+
+.row .nft__item_action {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  margin-top: 8px !important;
+}
+
+.row .nft__item_price {
+  display: block !important;
+  position: static !important;
+  margin: 0 !important;
+}
+
+.row .nft__item_like {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+
+  position: static !important;
+  margin: 0 !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.row .nft__item_like i,
+.row .nft__item_like span {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* ===== AUTHOR PAGE CARD SIZE FIX ===== */
+
+.de_tab_content .author-items-row .author-card .nft__item {
+  height: 330px !important;
+  min-height: 330px !important;
+  max-height: 330px !important;
+  padding: 12px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.de_tab_content .author-items-row .author-card .nft__item_wrap {
+  height: 165px !important;
+  min-height: 165px !important;
+  max-height: 165px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.de_tab_content .author-items-row .author-card .nft__item_wrap > a {
+  height: 165px !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.de_tab_content .author-items-row .author-card img.nft__item_preview {
+  width: 100% !important;
+  height: 165px !important;
+  max-height: 165px !important;
+  object-fit: contain !important;
+}
+
+.de_tab_content .author-items-row .author-card .nft__item_info {
+  margin-top: 10px !important;
+  padding: 0 !important;
+}
+
+.de_tab_content .author-items-row .author-card .nft__item_info h4 {
+  margin: 0 0 8px !important;
+}
+
+.de_tab_content .author-items-row .author-card .nft__item_action {
+  margin-top: 0 !important;
+}
+
+/* FINAL AUTHOR CARD HEIGHT FIX */
+
+.de_tab_content .author-items-row .author-card .nft__item {
+  height: 300px !important;
+  min-height: 300px !important;
+  max-height: 300px !important;
+  padding: 12px !important;
+}
+
+.de_tab_content .author-items-row .author-card .nft__item_wrap {
+  height: 125px !important;
+  min-height: 125px !important;
+  max-height: 125px !important;
+  margin-bottom: 10px !important;
+}
+
+.de_tab_content .author-items-row .author-card .nft__item_wrap > a {
+  height: 125px !important;
+}
+
+.de_tab_content .author-items-row .author-card img.nft__item_preview {
+  height: 125px !important;
+  max-height: 125px !important;
+  width: 100% !important;
+  object-fit: contain !important;
+}
+
+.de_tab_content .author-items-row .author-card .nft__item_info {
+  margin-top: 8px !important;
+  padding: 0 !important;
+}
+
+.de_tab_content .author-items-row .author-card .nft__item_info h4 {
+  margin: 0 0 8px !important;
+}
+
+.de_tab_content .author-items-row .author-card .nft__item_action {
+  margin-top: 0 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* =========================================
+   AUTHOR PAGE CARD FIX - ACTUAL STRUCTURE
+   ========================================= */
+
+/* 4 cards per row */
+.de_tab_content .tab-1 > .row {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+  margin: 0 !important;
+}
+
+/* Bootstrap columns inside the grid */
+.de_tab_content .tab-1 > .row > .col-lg-3,
+.de_tab_content .tab-1 > .row > .col-md-6,
+.de_tab_content .tab-1 > .row > .col-sm-6,
+.de_tab_content .tab-1 > .row > .col-xs-12 {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: none !important;
+  padding: 0 !important;
+}
+
+/* Entire NFT card */
+.de_tab_content .tab-1 .nft__item {
+  position: relative !important;
+  width: 100% !important;
+  height: 390px !important;
+  min-height: 0 !important;
+  padding: 15px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Image area */
+.de_tab_content .tab-1 .nft__item_wrap {
+  width: 100% !important;
+  height: 230px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Link containing image */
+.de_tab_content .tab-1 .nft__item_wrap > a {
+  width: 100% !important;
+  height: 230px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* NFT picture */
+.de_tab_content .tab-1 img.nft__item_preview {
+  width: 100% !important;
+  height: 230px !important;
+  max-width: 100% !important;
+  max-height: 230px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Author avatar */
+.de_tab_content .tab-1 .author_list_pp {
+  position: absolute !important;
+  top: 12px !important;
+  left: 12px !important;
+  z-index: 10 !important;
+}
+
+.de_tab_content .tab-1 .profile_avatar,
+.de_tab_content .tab-1 .profile_avatar img {
+  width: 45px !important;
+  height: 45px !important;
+  max-width: 45px !important;
+  max-height: 45px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+/* Title/info section */
+.de_tab_content .tab-1 .nft__item_info {
+  margin-top: 12px !important;
+  padding: 0 !important;
+}
+
+/* Title */
+.de_tab_content .tab-1 .nft__item_info h4 {
+  margin: 0 0 8px 0 !important;
+}
+
+/* Price + likes on same row */
+.de_tab_content .tab-1 .nft__item_action {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* Likes */
+.de_tab_content .tab-1 .nft__item_like {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  margin-left: auto !important;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .de_tab_content .tab-1 > .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .de_tab_content .tab-1 > .row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================
+   FINAL AUTHOR CARD SIZE / SPACING FIX
+   ========================================= */
+
+.de_tab_content .tab-1 .nft__item {
+  height: 360px !important;
+  min-height: 360px !important;
+  max-height: 360px !important;
+  padding: 15px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* NFT image container */
+.de_tab_content .tab-1 .nft__item_wrap {
+  width: 100% !important;
+  height: 230px !important;
+  margin-top: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+/* image */
+.de_tab_content .tab-1 .nft__item_wrap img.nft__item_preview {
+  width: 100% !important;
+  height: 230px !important;
+  max-width: 100% !important;
+  max-height: 230px !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+}
+
+/* Author avatar */
+.de_tab_content .tab-1 .author_list_pp {
+  position: absolute !important;
+  top: 10px !important;
+  left: 15px !important;
+  z-index: 20 !important;
+}
+
+/* information under image */
+.de_tab_content .tab-1 .nft__item_info {
+  margin-top: 12px !important;
+  padding: 0 !important;
+}
+
+/* title */
+.de_tab_content .tab-1 .nft__item_info h4 {
+  margin: 0 0 6px 0 !important;
+  padding: 0 !important;
+  line-height: 22px !important;
+}
+
+/* bottom price / like row */
+.de_tab_content .tab-1 .nft__item_action {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  margin-top: 4px !important;
+}
+
+/* price */
+.de_tab_content .tab-1 .nft__item_price {
+  display: block !important;
+  margin: 0 !important;
+}
+
+/* heart + likes */
+.de_tab_content .tab-1 .nft__item_like {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  margin: 0 0 0 auto !important;
+  position: static !important;
+}
+
+/* =========================================
+   FINAL AUTHOR CARD CONTENT ALIGNMENT
+   ========================================= */
+
+.de_tab_content .tab-1 .nft__item {
+  height: 360px !important;
+  padding: 15px !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+/* Avatar container */
+.de_tab_content .tab-1 .author_list_pp {
+  position: absolute !important;
+  top: 12px !important;
+  left: 15px !important;
+  width: 48px !important;
+  height: 48px !important;
+  z-index: 20 !important;
+}
+
+/* Avatar */
+.de_tab_content .tab-1 .profile_avatar {
+  width: 48px !important;
+  height: 48px !important;
+  position: relative !important;
+}
+
+.de_tab_content .tab-1 .profile_avatar img {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  max-width: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  display: block !important;
+}
+
+/* Purple check attached to avatar */
+.de_tab_content .tab-1 .profile_avatar .fa-check {
+  position: absolute !important;
+  right: -5px !important;
+  bottom: -3px !important;
+  width: 21px !important;
+  height: 21px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 30 !important;
+}
+
+/* Image area */
+.de_tab_content .tab-1 .nft__item_wrap {
+  width: 100% !important;
+  height: 235px !important;
+  margin-top: 5px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+.de_tab_content .tab-1 .nft__item_wrap > a {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.de_tab_content .tab-1 img.nft__item_preview {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 235px !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+}
+
+/* Info section */
+.de_tab_content .tab-1 .nft__item_info {
+  margin-top: 12px !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* Title */
+.de_tab_content .tab-1 .nft__item_info h4 {
+  margin: 0 0 6px 0 !important;
+  padding: 0 !important;
+  font-size: 15px !important;
+  line-height: 20px !important;
+}
+
+/* Price + likes row */
+.de_tab_content .tab-1 .nft__item_action {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-top: 2px !important;
+}
+
+/* Price */
+.de_tab_content .tab-1 .nft__item_price {
+  position: static !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+/* Likes */
+.de_tab_content .tab-1 .nft__item_like {
+  position: static !important;
+  margin-left: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+/* =====================================================
+   EXPLORE PAGE - FINAL CARD SIZE
+   DO NOT APPLY TO AUTHOR PAGE
+===================================================== */
+
+.items_filter + .row .d-item {
+  padding: 10px !important;
+}
+
+/* actual explore card */
+.items_filter + .row .d-item .nft__item {
+  width: 100% !important;
+  height: 360px !important;
+  min-height: 360px !important;
+  max-height: 360px !important;
+  padding: 15px !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+}
+
+/* image container */
+.items_filter + .row .d-item .nft__item_wrap {
+  width: 100% !important;
+  height: 245px !important;
+  max-height: 245px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* NFT image */
+.items_filter + .row .d-item .nft__item_wrap img.nft__item_preview {
+  width: 100% !important;
+  height: 245px !important;
+  max-height: 245px !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 5px !important;
+}
+
+/* title + bottom information */
+.items_filter + .row .d-item .nft__item_info {
+  margin-top: 10px !important;
+  padding: 0 !important;
+}
+
+.items_filter + .row .d-item .nft__item_info h4 {
+  margin: 0 0 4px 0 !important;
+  line-height: 1.2 !important;
+}
+
+/* price and likes on same row */
+.items_filter + .row .d-item .nft__item_action {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-top: 4px !important;
+}
+
+/* likes stay inside right side of card */
+.items_filter + .row .d-item .nft__item_like {
+  position: static !important;
+  margin-left: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+/* author image */
+.items_filter + .row .d-item .author_list_pp {
+  position: absolute !important;
+  top: 12px !important;
+  left: 12px !important;
+  z-index: 10 !important;
+}
+
+/* countdown */
+.items_filter + .row .d-item .de_countdown {
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  z-index: 10 !important;
+}
+
+/* reduce vertical space between rows */
+.items_filter + .row {
+  row-gap: 18px !important;
+}
+/* =========================================
+
+   EXPLORE PAGE - FINAL CARD STYLE
+
+   ========================================= */
+
+/* spacing around explore cards */
+
+.explore-page .row,
+
+.explore-items-row {
+
+  margin-left: -10px;
+
+  margin-right: -10px;
+
+}
+
+/* each bootstrap column */
+
+.explore-page .d-item,
+
+.explore-items-row .d-item {
+
+  padding: 10px !important;
+
+}
+
+/* MAIN CARD */
+
+.explore-page .nft__item,
+
+.explore-items-row .nft__item {
+
+  position: relative !important;
+
+  width: 100% !important;
+
+  height: 390px !important;
+
+  min-height: 390px !important;
+
+  max-height: 390px !important;
+
+  padding: 16px !important;
+
+  border: 1px solid #e5e5e5 !important;
+
+  border-radius: 12px !important;
+
+  background: #fff !important;
+
+  box-sizing: border-box !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  overflow: hidden !important;
+
+}
+
+/* =========================================
+
+   AUTHOR IMAGE + CHECK
+
+   ========================================= */
+
+.explore-page .author_list_pp,
+
+.explore-items-row .author_list_pp {
+
+  position: absolute !important;
+
+  top: 16px !important;
+
+  left: 16px !important;
+
+  width: 48px !important;
+
+  height: 48px !important;
+
+  z-index: 10 !important;
+
+}
+
+.explore-page .author_list_pp img,
+
+.explore-items-row .author_list_pp img {
+
+  width: 48px !important;
+
+  height: 48px !important;
+
+  border-radius: 50% !important;
+
+  object-fit: cover !important;
+
+  display: block !important;
+
+}
+
+.explore-page .author_list_pp .fa-check,
+
+.explore-items-row .author_list_pp .fa-check {
+
+  position: absolute !important;
+
+  right: -3px !important;
+
+  bottom: -3px !important;
+
+  width: 20px !important;
+
+  height: 20px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  border-radius: 50% !important;
+
+  font-size: 10px !important;
+
+}
+
+/* =========================================
+
+   COUNTDOWN
+
+   ========================================= */
+
+.explore-page .de_countdown,
+
+.explore-items-row .de_countdown {
+
+  position: absolute !important;
+
+  top: 16px !important;
+
+  right: 14px !important;
+
+  width: auto !important;
+
+  min-width: 115px !important;
+
+  padding: 5px 12px !important;
+
+  border: 2px solid #6c4ee3 !important;
+
+  border-radius: 20px !important;
+
+  background: #fff !important;
+
+  text-align: center !important;
+
+  font-size: 14px !important;
+
+  line-height: 18px !important;
+
+  z-index: 9 !important;
+
+}
+
+/* =========================================
+
+   NFT IMAGE
+
+   ========================================= */
+
+.explore-page .nft__item_wrap,
+
+.explore-items-row .nft__item_wrap {
+
+  width: 100% !important;
+
+  height: 245px !important;
+
+  margin-top: 40px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  overflow: hidden !important;
+
+}
+
+.explore-page .nft__item_wrap a,
+
+.explore-items-row .nft__item_wrap a {
+
+  width: 100% !important;
+
+  height: 100% !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+}
+
+.explore-page img.nft__item_preview,
+
+.explore-items-row img.nft__item_preview {
+
+  width: 100% !important;
+
+  height: 100% !important;
+
+  max-width: 100% !important;
+
+  max-height: 245px !important;
+
+  object-fit: cover !important;
+
+  border-radius: 8px !important;
+
+  display: block !important;
+
+}
+
+/* =========================================
+
+   TITLE / PRICE / LIKES
+
+   ========================================= */
+
+.explore-page .nft__item_info,
+
+.explore-items-row .nft__item_info {
+
+  margin-top: 14px !important;
+
+  width: 100% !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+}
+
+.explore-page .nft__item_info h4,
+
+.explore-items-row .nft__item_info h4 {
+
+  margin: 0 0 8px 0 !important;
+
+  font-size: 15px !important;
+
+  line-height: 20px !important;
+
+  font-weight: 700 !important;
+
+}
+
+.explore-page .nft__item_action,
+
+.explore-items-row .nft__item_action {
+
+  width: 100% !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: space-between !important;
+
+  margin-top: auto !important;
+
+}
+
+.explore-page .nft__item_price,
+
+.explore-items-row .nft__item_price {
+
+  font-size: 14px !important;
+
+  font-weight: 500 !important;
+
+  margin: 0 !important;
+
+}
+
+.explore-page .nft__item_like,
+
+.explore-items-row .nft__item_like {
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 5px !important;
+
+  margin: 0 !important;
+
+  font-size: 13px !important;
+
+  position: static !important;
+
+}
+
+.explore-page .nft__item_like i,
+
+.explore-items-row .nft__item_like i {
+
+  margin: 0 !important;
+
+}
+
+/* =========================================
+
+   DESKTOP - 4 CARDS
+
+   ========================================= */
+
+@media (min-width: 992px) {
+
+  .explore-page .d-item,
+
+  .explore-items-row .d-item {
+
+    width: 25% !important;
+
+    flex: 0 0 25% !important;
+
+    max-width: 25% !important;
+
+  }
+
+}
+
+/* =========================================
+
+   TABLET
+
+   ========================================= */
+
+@media (max-width: 991px) {
+
+  .explore-page .d-item,
+
+  .explore-items-row .d-item {
+
+    width: 50% !important;
+
+    flex: 0 0 50% !important;
+
+    max-width: 50% !important;
+
+  }
+
+}
+
+/* =========================================
+
+   PHONE
+
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .explore-page .d-item,
+
+  .explore-items-row .d-item {
+
+    width: 100% !important;
+
+    flex: 0 0 100% !important;
+
+    max-width: 100% !important;
+
+  }
+
+  .explore-page .nft__item,
+
+  .explore-items-row .nft__item {
+
+    height: auto !important;
+
+    min-height: 380px !important;
+
+    max-height: none !important;
+
+  }
+
+}

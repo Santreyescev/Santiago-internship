@@ -1,15 +1,14 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import EthImage from "../images/ethereum.svg";
-import AuthorImage from "../images/author_thumbnail.jpg";
-import nftImage from "../images/nftImage.jpg";
+
 import { Link, useLocation, useParams } from "react-router-dom";
 
 const ItemDetails = () => {
   const location = useLocation();
   const { id } = useParams();
   const [details, setDetails] = useState(null);
-  const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
   const getItemDetails = async () => {
@@ -23,7 +22,7 @@ const ItemDetails = () => {
     } catch (error) {
       console.error("Error loading item details:", error);
     } finally {
-      setLoading(false);
+      
     }
   };
 
@@ -33,50 +32,6 @@ const ItemDetails = () => {
 const item = location.state?.item;
   
 
-  const itemDetails = {
-  1: {
-    views: 120,
-    likes: 45,
-    price: 1.25,
-    description: "A colorful abstract NFT with a modern artistic style.",
-    authorName: "Alex Morgan",
-  },
-  2: {
-    views: 98,
-    likes: 61,
-    price: 1.5,
-    description: "A playful pattern NFT with a clean minimalist design.",
-    authorName: "Jordan Lee",
-  },
-  3: {
-    views: 150,
-    likes: 82,
-    price: 1.85,
-    description: "A vibrant artistic NFT full of color and movement.",
-    authorName: "Taylor Smith",
-  },
-  4: {
-    views: 210,
-    likes: 110,
-    price: 2.1,
-    description: "A creative digital artwork with a unique visual style.",
-    authorName: "Monica Lucas",
-  },
-  5: {
-    views: 175,
-    likes: 93,
-    price: 2.35,
-    description: "A distinctive NFT created with bold colors and shapes.",
-    authorName: "Chris Wilson",
-  },
-  6: {
-    views: 245,
-    likes: 128,
-    price: 2.75,
-    description: "A premium digital collectible with an original design.",
-    authorName: "Jamie Davis",
-  },
-};
 
 const selectedDetails =
   details || location.state?.item;
@@ -94,7 +49,7 @@ console.log("ITEM DETAILS:", item);
   console.log("ITEM ID:", id);
   console.log("CLICKED ITEM:", item);
   console.log("CREATOR IMAGE:", selectedDetails.creatorImage);
-  console. log("OWNER IMAGE:", selectedDetails.ownerImage);
+  console.log("OWNER IMAGE:", selectedDetails.ownerImage);
 
 
   
