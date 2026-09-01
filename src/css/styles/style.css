@@ -18201,3 +18201,396 @@ img {
 .items_filter + .row {
   row-gap: 18px !important;
 }
+/* =========================================
+
+   EXPLORE PAGE - FINAL CARD STYLE
+
+   ========================================= */
+
+/* spacing around explore cards */
+
+.explore-page .row,
+
+.explore-items-row {
+
+  margin-left: -10px;
+
+  margin-right: -10px;
+
+}
+
+/* each bootstrap column */
+
+.explore-page .d-item,
+
+.explore-items-row .d-item {
+
+  padding: 10px !important;
+
+}
+
+/* MAIN CARD */
+
+.explore-page .nft__item,
+
+.explore-items-row .nft__item {
+
+  position: relative !important;
+
+  width: 100% !important;
+
+  height: 390px !important;
+
+  min-height: 390px !important;
+
+  max-height: 390px !important;
+
+  padding: 16px !important;
+
+  border: 1px solid #e5e5e5 !important;
+
+  border-radius: 12px !important;
+
+  background: #fff !important;
+
+  box-sizing: border-box !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+  overflow: hidden !important;
+
+}
+
+/* =========================================
+
+   AUTHOR IMAGE + CHECK
+
+   ========================================= */
+
+.explore-page .author_list_pp,
+
+.explore-items-row .author_list_pp {
+
+  position: absolute !important;
+
+  top: 16px !important;
+
+  left: 16px !important;
+
+  width: 48px !important;
+
+  height: 48px !important;
+
+  z-index: 10 !important;
+
+}
+
+.explore-page .author_list_pp img,
+
+.explore-items-row .author_list_pp img {
+
+  width: 48px !important;
+
+  height: 48px !important;
+
+  border-radius: 50% !important;
+
+  object-fit: cover !important;
+
+  display: block !important;
+
+}
+
+.explore-page .author_list_pp .fa-check,
+
+.explore-items-row .author_list_pp .fa-check {
+
+  position: absolute !important;
+
+  right: -3px !important;
+
+  bottom: -3px !important;
+
+  width: 20px !important;
+
+  height: 20px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  border-radius: 50% !important;
+
+  font-size: 10px !important;
+
+}
+
+/* =========================================
+
+   COUNTDOWN
+
+   ========================================= */
+
+.explore-page .de_countdown,
+
+.explore-items-row .de_countdown {
+
+  position: absolute !important;
+
+  top: 16px !important;
+
+  right: 14px !important;
+
+  width: auto !important;
+
+  min-width: 115px !important;
+
+  padding: 5px 12px !important;
+
+  border: 2px solid #6c4ee3 !important;
+
+  border-radius: 20px !important;
+
+  background: #fff !important;
+
+  text-align: center !important;
+
+  font-size: 14px !important;
+
+  line-height: 18px !important;
+
+  z-index: 9 !important;
+
+}
+
+/* =========================================
+
+   NFT IMAGE
+
+   ========================================= */
+
+.explore-page .nft__item_wrap,
+
+.explore-items-row .nft__item_wrap {
+
+  width: 100% !important;
+
+  height: 245px !important;
+
+  margin-top: 40px !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  overflow: hidden !important;
+
+}
+
+.explore-page .nft__item_wrap a,
+
+.explore-items-row .nft__item_wrap a {
+
+  width: 100% !important;
+
+  height: 100% !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+}
+
+.explore-page img.nft__item_preview,
+
+.explore-items-row img.nft__item_preview {
+
+  width: 100% !important;
+
+  height: 100% !important;
+
+  max-width: 100% !important;
+
+  max-height: 245px !important;
+
+  object-fit: cover !important;
+
+  border-radius: 8px !important;
+
+  display: block !important;
+
+}
+
+/* =========================================
+
+   TITLE / PRICE / LIKES
+
+   ========================================= */
+
+.explore-page .nft__item_info,
+
+.explore-items-row .nft__item_info {
+
+  margin-top: 14px !important;
+
+  width: 100% !important;
+
+  display: flex !important;
+
+  flex-direction: column !important;
+
+}
+
+.explore-page .nft__item_info h4,
+
+.explore-items-row .nft__item_info h4 {
+
+  margin: 0 0 8px 0 !important;
+
+  font-size: 15px !important;
+
+  line-height: 20px !important;
+
+  font-weight: 700 !important;
+
+}
+
+.explore-page .nft__item_action,
+
+.explore-items-row .nft__item_action {
+
+  width: 100% !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: space-between !important;
+
+  margin-top: auto !important;
+
+}
+
+.explore-page .nft__item_price,
+
+.explore-items-row .nft__item_price {
+
+  font-size: 14px !important;
+
+  font-weight: 500 !important;
+
+  margin: 0 !important;
+
+}
+
+.explore-page .nft__item_like,
+
+.explore-items-row .nft__item_like {
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 5px !important;
+
+  margin: 0 !important;
+
+  font-size: 13px !important;
+
+  position: static !important;
+
+}
+
+.explore-page .nft__item_like i,
+
+.explore-items-row .nft__item_like i {
+
+  margin: 0 !important;
+
+}
+
+/* =========================================
+
+   DESKTOP - 4 CARDS
+
+   ========================================= */
+
+@media (min-width: 992px) {
+
+  .explore-page .d-item,
+
+  .explore-items-row .d-item {
+
+    width: 25% !important;
+
+    flex: 0 0 25% !important;
+
+    max-width: 25% !important;
+
+  }
+
+}
+
+/* =========================================
+
+   TABLET
+
+   ========================================= */
+
+@media (max-width: 991px) {
+
+  .explore-page .d-item,
+
+  .explore-items-row .d-item {
+
+    width: 50% !important;
+
+    flex: 0 0 50% !important;
+
+    max-width: 50% !important;
+
+  }
+
+}
+
+/* =========================================
+
+   PHONE
+
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .explore-page .d-item,
+
+  .explore-items-row .d-item {
+
+    width: 100% !important;
+
+    flex: 0 0 100% !important;
+
+    max-width: 100% !important;
+
+  }
+
+  .explore-page .nft__item,
+
+  .explore-items-row .nft__item {
+
+    height: auto !important;
+
+    min-height: 380px !important;
+
+    max-height: none !important;
+
+  }
+
+}
