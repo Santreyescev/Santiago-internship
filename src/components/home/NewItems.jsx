@@ -1,32 +1,53 @@
 import React, { useEffect, useState} from "react";
 import { Link } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
 
 const NewItems = () => {
+
+const settings = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows: true,
+
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
+
   const [items, setItems] = useState([]);
   console.log("MY ITEMS:", items);
   const [time, setTime] = useState(Date.now());
-  const [startIndex, setStartIndex] = useState(0);
+  
   const [loading, setLoading] = useState(true);
 
-  const handlePrev = () => {
-    setStartIndex((prev) => {
-      if (prev === 0) {
-        return Math.max(items.length - 4, 0);
-      }
-
-      return prev - 1;
-    });
-  };
-
-  const handleNext = () => {
-    setStartIndex((prev) => {
-      if (prev >= items.length - 4) {
-        return 0;
-      }
-
-      return prev + 1;
-    });
-  };
+  
 
   const getTimeLeft = (expiryDate) => {
     const difference = expiryDate - time;
@@ -81,14 +102,7 @@ const NewItems = () => {
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
-<button
-  type="button"
-  className="slider-arrow slider-arrow-left"
-  onClick={handlePrev}
-  
->
-  <i className="fa fa-chevron-left"></i>
-</button>
+
             
         {loading
   ? new Array(4).fill(0).map((_, index) => (
@@ -105,8 +119,10 @@ const NewItems = () => {
         </div>
       </div>
     ))
-  : items.slice(startIndex, startIndex + 4).map((item) => (
-            <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={item.id}>
+ : (
+  <Slider {...settings} className="new-items-slider">
+    {items.map((item) => (
+            <div className="new-item-slide" key={item.id}>
               <div className="nft__item author-nft-card">
                 <div className="author_list_pp">
                   <Link
@@ -164,14 +180,9 @@ const NewItems = () => {
               </div>
             </div>
           ))}
-          <button
-  type="button"
-  className="slider-arrow slider-arrow-right"
-  onClick={handleNext}
-
->
-  <i className="fa fa-chevron-right"></i>
-</button>
+          </Slider>
+        )}
+      
         </div>
       </div>
     </section>
