@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ExploreItems = () => {
 const [sortOption, setSortOption] = useState("");
-
+const [loading, setLoading] = useState(true);
 
   const [items, setItems] = useState([]);
 
@@ -19,8 +19,12 @@ useEffect(() => {
       console.log("EXPLORE API:", data);
 
       setItems(data);
+    setTimeout(() => {
+  setLoading(false);
+}, 1000);
     } catch (error) {
       console.error("Explore API error:", error);
+setLoading(false);
     }
   }
 
@@ -98,7 +102,29 @@ const sortedItems = [...items].sort((a, b) => {
     
 
    <div className="row explore-items-row">
-  {sortedItems.slice(0, visibleItems).map((item) => (
+ {loading
+  ? new Array(16).fill(0).map((_, index) => (
+      <div
+        className="explore-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
+        key={index}
+      >
+        <div className="explore-skeleton-card">
+          <div className="explore-skeleton-top">
+            <div className="explore-skeleton-avatar"></div>
+            <div className="explore-skeleton-timer"></div>
+          </div>
+
+          <div className="explore-skeleton-image"></div>
+          <div className="explore-skeleton-title"></div>
+
+          <div className="explore-skeleton-bottom">
+            <div className="explore-skeleton-price"></div>
+            <div className="explore-skeleton-likes"></div>
+          </div>
+        </div>
+      </div>
+    ))
+  : sortedItems.slice(0, visibleItems).map((item) => (
    <div
   className="explore-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
   key={item.nftId || item.id}

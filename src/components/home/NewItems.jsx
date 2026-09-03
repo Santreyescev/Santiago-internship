@@ -42,13 +42,10 @@ const settings = {
 };
 
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
   console.log("MY ITEMS:", items);
   const [time, setTime] = useState(Date.now());
   
-  const [loading, setLoading] = useState(true);
-
-  
-
   const getTimeLeft = (expiryDate) => {
     const difference = expiryDate - time;
 
@@ -80,7 +77,10 @@ const settings = {
         console.log("FIRST ITEM:", data[0]);
 
       setItems(data);
-      setLoading(false);
+
+setTimeout(() => {
+  setLoading(false);
+}, 4000);
 
     } catch (error) {
       console.error("Error fetching new items:", error);
@@ -104,18 +104,21 @@ const settings = {
           </div>
 
             
-        {loading
+      {loading
   ? new Array(4).fill(0).map((_, index) => (
       <div
         className="col-lg-3 col-md-6 col-sm-6 col-xs-12"
         key={index}
       >
-        <div className="nft__item skeleton-card">
-          <div className="skeleton-author"></div>
-          <div className="skeleton-code"></div>
-          <div className="skeleton-image"></div>
-          <div className="skeleton-title"></div>
-          <div className="skeleton-code"></div>
+        <div className="newitem-skeleton-card">
+          <div className="newitem-skeleton-author"></div>
+          <div className="newitem-skeleton-image"></div>
+          <div className="newitem-skeleton-title"></div>
+
+          <div className="newitem-skeleton-bottom">
+            <div className="newitem-skeleton-price"></div>
+            <div className="newitem-skeleton-like"></div>
+          </div>
         </div>
       </div>
     ))

@@ -6,18 +6,28 @@ const TopSellers = () => {
   
 
   useEffect(() => {
-    const fetchTopSellers = async () => {
-      try {
-        const response = await fetch("https://us-central1-nft-cloud-functions.cloudfunctions.net/topSellers");
-        const data = await response.json();
-        setSellers(data);
-      } catch (error) {
-        console.error("Error fetching top sellers:", error);
-      }
-    };
+  const fetchTopSellers = async () => {
+    
 
-    fetchTopSellers();
-  }, []);
+    try {
+      const response = await fetch(
+        "https://us-central1-nft-cloud-functions.cloudfunctions.net/topSellers"
+      );
+
+      const data = await response.json();
+      setSellers(data);
+
+      console.log("TOP SELLERS API:", data);
+
+    } catch (error) {
+      console.error("Error fetching top sellers:", error);
+
+      
+    }
+  };
+
+  fetchTopSellers();
+}, []);
 
   return (
     <section id="section-popular" className="pb-5">
@@ -30,8 +40,9 @@ const TopSellers = () => {
             </div>
           </div>
           <div className="col-md-12">
+            
             <ol className="author_list">
-              {sellers.map((seller, index) => (
+    {sellers.map((seller, index) => (
                 <li key={seller.id}>
                   <div className="author_list_pp">
                     <Link to={`/author/${seller.authorId}`}>

@@ -37,7 +37,7 @@ const Home = () => {
         <Landing />
         <LandingIntro />
         <HotCollections  hotCollections={hotCollections} loading={loading} />
-        <NewItems />
+        <NewItems  />
         <TopSellers />
         <BrowseByCategory />
       </div>
