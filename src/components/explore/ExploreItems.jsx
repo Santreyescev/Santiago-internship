@@ -97,62 +97,70 @@ const sortedItems = [...items].sort((a, b) => {
 </div>
     
 
-   <div className="row">
+   <div className="row explore-items-row">
   {sortedItems.slice(0, visibleItems).map((item) => (
-    <div
-      key={item.nftId || item.id}
-      className="d-item explore-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
-      style={{ display: "block" }}
-    >
-      <div className="nft__item explore-card">
+   <div
+  className="explore-item col-lg-3 col-md-6 col-sm-6 col-xs-12"
+  key={item.nftId || item.id}
+>
+  <div className="nft__item explore-card">
 
-        <div className="author_list_pp">
-          <Link to={`/author/${item.authorId}`}>
-            <img
-              className="lazy"
-              src={item.authorImage}
-              alt={item.authorName}
-            />
-            <i className="fa fa-check"></i>
-          </Link>
-        </div>
+    <div className="author_list_pp">
+      <Link
+        to={`/author/${item.authorId}`}
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title={`Creator: ${item.authorId}`}
+      >
+        <img
+          className="lazy"
+          src={item.authorImage}
+          alt={item.authorName || ""}
+        />
+        <i className="fa fa-check"></i>
+      </Link>
+    </div>
 
-        {item.expiryDate && (
-          <div className="de_countdown explore-countdown">
-            {formatCountdown(item.expiryDate)}
-          </div>
-        )}
+   {item.expiryDate && (
+  <div className="de_countdown explore-countdown">
+    {formatCountdown(item.expiryDate)}
+  </div>
+)}
 
-        <div className="nft__item_wrap">
-          <Link
-            to={`/item-details/${item.nftId}`}
-            state={{ item }}
-          >
-            <img
-              src={item.nftImage}
-              className="lazy nft__item_preview"
-              alt={item.title}
-            />
-          </Link>
-        </div>
 
-        <div className="nft__item_info">
-          <Link to={`/item-details/${item.nftId}`}>
-            <h4>{item.title}</h4>
-          </Link>
+    <div className="nft__item_wrap">
+      <Link
+        to={`/item-details/${item.nftId}`}
+        state={{ item }}
+      >
+        <img
+          src={item.nftImage}
+          className="lazy nft__item_preview"
+          alt={item.title}
+        />
+      </Link>
+    </div>
 
-          <div className="nft__item_price">
-            {item.price} ETH
-          </div>
+    <div className="nft__item_info">
+      <Link
+        to={`/item-details/${item.nftId}`}
+        state={{ item }}
+      >
+        <h4>{item.title}</h4>
+      </Link>
 
-          <div className="nft__item_like">
-            <i className="fa fa-heart"></i>
-            <span>{item.likes}</span>
-          </div>
-        </div>
+      <div className="nft__item_price">
+        {item.price} ETH
+      </div>
 
+      <div className="nft__item_like">
+        <i className="fa fa-heart"></i>
+        <span>{item.likes}</span>
       </div>
     </div>
+
+  </div>
+</div>
   ))}
        
       {visibleItems < sortedItems.length && (

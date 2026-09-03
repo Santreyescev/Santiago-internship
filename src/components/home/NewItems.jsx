@@ -126,12 +126,15 @@ const settings = {
               <div className="nft__item author-nft-card">
                 <div className="author_list_pp">
                   <Link
-                    to="/author"
+                    to={`/author/${item.authorId}`}
                     data-bs-toggle="tooltip"
                     data-bs-placement="top"
                     title={`Creator: ${item.authorId}`}
                   >
-                    <img className="lazy" src={item.authorImage} alt="" />
+                    <img className="lazy" 
+                    src={item.authorImage} 
+                    alt="" 
+                    />
                     <i className="fa fa-check"></i>
                   </Link>
                 </div>

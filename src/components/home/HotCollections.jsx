@@ -16,6 +16,7 @@ const NextArrow = ({ onClick }) => {
   );
 };
 
+
 const PrevArrow = ({ onClick }) => {
   return (
     <button
@@ -27,6 +28,8 @@ const PrevArrow = ({ onClick }) => {
     </button>
   );
 };
+
+
 
 const HotCollections = ({ hotCollections, loading }) => {
   const navigate = useNavigate();
@@ -73,7 +76,7 @@ const HotCollections = ({ hotCollections, loading }) => {
 
 
 
- return (
+ return ( 
     <section id="section-collections" className="no-bottom">
       <div className="container">
         <div className="row">
@@ -95,7 +98,10 @@ const HotCollections = ({ hotCollections, loading }) => {
           </div>
         </div>
       ))
-    : hotCollections.map((item, index) => (
+    : hotCollections.map((item, index) => {
+  console.log("HOT COLLECTION ITEM:", item);
+
+  return (
   <div
     key={item.id}
     className="nft_coll"
@@ -118,18 +124,22 @@ dettailId: index + 1,
             </div>
 
             <div className="nft_coll_pp">
-              <Link
-                to={`/item-details/${item.nftId}`}
-                state={{ item }}
 
-                onClick={(e) => e.stopPropagation()}
-              >
-                <img
-                  className="lazy pp-coll"
-                  src={item.authorImage || item.ownerImage}
-                  alt="item. title"
-                />
-              </Link>
+  {console.log("HOT ITEM:", item)}
+  {console.log("authorId:", item.authorId)}
+  {console.log("ownerId:", item.ownerId)}
+  {console.log("nftId:", item.nftId)}
+
+  <Link
+  to={`/author/${item.authorId}`}
+  onClick={(e) => e.stopPropagation()}
+>
+  <img
+    className="lazy pp-coll"
+    src={item.authorImage || item.ownerImage}
+    alt={item.title}
+  />
+</Link>
 
             <i className="fa fa-check"></i>
           </div>
@@ -138,16 +148,17 @@ dettailId: index + 1,
             <span>ERC-{item.code}</span>
           </div>
         </div>
-      ))}
+      );
+      })}
 
 </Slider>
-        </div>
-      </div>
-    </section>
+</div>
+</div>
+</section>
   );
+
 };
 
-
-
+ 
 
 export default HotCollections;
